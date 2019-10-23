@@ -1,0 +1,30 @@
+{
+  "name": "fuze-boilerplate",
+  "version": "1.0.0",
+  "description": "Tikal's Micro-Frontends Fuzeday Starter Kit",
+  "main": "index.js",
+  "scripts": {
+    "start": "leran run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tikalk/fuze-boilerplate.git"
+  },
+  "keywords": [
+    "Tikal",
+    "Fuze",
+    "Micro-Frontends",
+    "Microfronts",
+    "frontend"
+  ],
+  "author": "avichay@tikalk.com",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/tikalk/fuze-boilerplate/issues"
+  },
+  "homepage": "https://github.com/tikalk/fuze-boilerplate#readme",
+  "devDependencies": {
+    "lerna": "^3.18.3"
+  }
+}
