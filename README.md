@@ -36,6 +36,19 @@ Add a new module under a new url route, created in a different framework.
 
 ## Step 4
 Integrate between the modules to work as one.
+- Configure the shell
+- Configure the new routes
+- Disable "unknown" routes on legacy modules
+- Enable shared runtime between the modules
+- And more...
+
+### Micro-fronts development requirements and planning
+- Know your project. There are obstacles towards the full integration.
+- Enable CORS for your dev-servers. Microfronts assumes you are working with "friendly-frames", meaning CORS enabling is crutial. For deployment there are various approaches, this will be discussed in the fuze.
+- Be familiar with your current routing mechanism. Some routers enforces prefixes, or provide default fallback to a specific route. This should be handled. In this demo we will deal with the "legacy" app's router and enable it to work with other modules.
+- Build and deployment. Every project needs it's own practice. Projects can be deployed on multiple servers and accessed via reversed-proxy, or be deployed on same endpoint with different folder prefixes. All apply.
+- Plan your routes, how your screens should look for each of them. Some may have only 1 visible module at a time, some can be displayed side-by-side with full integration. Prepare your basic blueprints before we start working on your project.
+- Refactoring: Some services can be easily refactored as a common code. Some can be provided and shared between modules at runtime. The best practice is to pull business-logic out of the framework, but this can be done step-by-step. The idea is to go forward while adding new features and choose which refactors can be dealt later, or not at all.
 
 ## Step 5...
 Add more modules with different frameworks.
