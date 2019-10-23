@@ -18,15 +18,27 @@ Read more here:
 
 ## Step 1
 Place the legacy application under "packages".
+For the example we will take our "legacy" application from the RealWorldApp project's angularJS implementation (https://github.com/gothinkster/angularjs-realworld-example-app).
+- `cd packages/conduit`
+- `git clone git@github.com:gothinkster/angularjs-realworld-example-app.git .`
 
 ## Step 2
 Create the shell application and orchestrate the legacy app to work as-is.
+- `cd packages/shell`
+- create `src/index.html` file with simple html structure
+- create and empty `src/index.js`
+- embed the `src/index.js` file into the `src/index.html` file.
 
 ## Step 3
 Add a new module under a new url route, created in a different framework.
+- `cd packages/todos`
+- create a react boilerplate app. For the example we will use `create-react-app`
 
 ## Step 4
 Integrate between the modules to work as one.
+
+## Step 5...
+Add more modules with different frameworks.
 
 ## Extended topics (TDB):
 - Sharing common code at runtime
