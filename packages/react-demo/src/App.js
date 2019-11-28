@@ -29,20 +29,19 @@ function Settings() {
   return <h2>Settings</h2>
 }
 
-function App() {
-  const [ userClick, setClick ] = useState();
-  let subscription;
-  useEffect(() => () => {
-    if (subscription) {
-      subscription.unsubscribe();
+let changeClickState;
+
+AppContext.require('click.service').then(emitter => {
+  emitter.subscribe((value) => {
+    if (changeClickState) {
+      changeClickState(value);
     }
   });
-  AppContext.require('click.service').then(emitter => {
-    subscription = emitter.subscribe((value) => {
-      setClick(value);
-      console.log(value);
-    });
-  });
+});
+
+function App() {
+  const [ userClick, setClick ] = useState();
+  changeClickState = setClick;
   return (
     <Router>
     <div className="App">
@@ -52,6 +51,7 @@ function App() {
         <p>User clicked: {userClick}</p>
         <Link to="/home">GO HOME</Link>
         <Link to="/settings">GO TO SETTINGS</Link>
+        <Link to="/side-by-side">GO SIDE BY SIDE</Link>
         <Switch>
           <Route path="/home">
             <Home></Home>

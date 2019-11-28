@@ -34,13 +34,22 @@ const ANGULAR = {
 }
 
 router.registerRoute('*', {
+    active: []
+});
+router.registerRoute('side-by-side', {
     active: [REACT, ANGULAR]
 });
-router.registerRoute('/home', {
+router.registerRoute('home', {
     active: [REACT]
 });
-router.registerRoute('/settings', {
+router.registerRoute('settings', {
     active: [REACT]
+});
+
+router.subscribe(routeInfo => {
+    if (routeInfo.base === '') {
+        router.navigate('/home');
+    }
 });
 
 router.init();
