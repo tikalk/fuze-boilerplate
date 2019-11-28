@@ -1,6 +1,8 @@
-# fuze-boilerplate
+# Tikal Microfronts: fuze-boilerplate
 
-This is a demonstration of extending a legacy app developed with an "old" framework (in this example, angularJS) with new modules created in modern frameworks.
+## Migrating front-ends to polyglot front-end applications.
+
+This is a general guid of extending a front-end application written in one technology, with another front-end written in another technology, using SHARED RUNTIME with the benefits of sandboxing globals and css. This is done with the "friendly-iframe" (or "constructible frame") technique.
 
 This tutorial will show how to use the micro-frontends approach to extend a large-scale application with new features developed in new standards, with minimal integration effort and no need to rewrite the whole application.
 
@@ -14,25 +16,17 @@ Read more here:
 - [lerna](https://lerna.js.org/)
 - [microfronts](https://github.com/eavichay/microfronts)
 
-#usetheplatform
 
 ## Step 1
-Place the legacy application under "packages".
-For the example we will take our "legacy" application from the RealWorldApp project's angularJS implementation (https://github.com/gothinkster/angularjs-realworld-example-app).
-- `cd packages/conduit`
-- `git clone git@github.com:gothinkster/angularjs-realworld-example-app.git .`
+Place one front-end application under "packages".
+In this example we have one Angular application, adding a react application.
+If you have your own front-end package, add it to packages folder.
 
 ## Step 2
 Create the shell application and orchestrate the legacy app to work as-is.
-- `cd packages/shell`
-- create `src/index.html` file with simple html structure
-- create and empty `src/index.js`
-- embed the `src/index.js` file into the `src/index.html` file.
 
 ## Step 3
 Add a new module under a new url route, created in a different framework.
-- `cd packages/todos`
-- create a react boilerplate app. For the example we will use `create-react-app`
 
 ## Step 4
 Integrate between the modules to work as one.
