@@ -1,11 +1,18 @@
 {
-  "name": "@fuze/shell",
+  "name": "shell",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "http-server .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "UNLICENSED"
+  "license": "ISC",
+  "dependencies": {
+    "microfronts": "^1.0.1"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.0"
+  }
 }
