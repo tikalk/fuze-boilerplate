@@ -1,0 +1,16 @@
+{
+    "REACT": {
+        "appId": "react",
+        "baseUrl": "/app-react/index.html",
+        "staticData": {
+            "static": "data"
+        }
+    },
+    "ANGULAR": {
+        "appId": "react",
+        "baseUrl": "/app-angular/index.html",
+        "staticData": {
+            "static": "data"
+        }
+    }
+}

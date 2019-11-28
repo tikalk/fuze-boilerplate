@@ -7,12 +7,14 @@ window.history.pushState = window.history.replaceState = (state, title, path) =>
 };
 window.addEventListener('hashchange', e => {
   e.preventDefault();
-  // e.stopPropagation();
+  e.stopPropagation();
 })
 window.addEventListener('popstate', e => {
   e.preventDefault();
-  // e.stopPropagation();
+  e.stopPropagation();
 });
+
+const AppContext = window['AppContext'];
 
 function Home() {
   const [ state, setState ] = useState(0);
@@ -25,8 +27,16 @@ function Home() {
   }, 1000);
   return <h2>Home {state}</h2>
 }
-function Settings() {
-  return <h2>Settings</h2>
+function Settings({title}) {
+  const [ state, setState ] = useState(0);
+  let timeout;
+  useEffect(() => () => {
+    if (timeout) clearTimeout(timeout);
+  });
+  timeout = setTimeout(() => {
+    AppContext.require('random.service').then(service => setState(service().toFixed(5).slice(2)));
+  }, 1000);
+  return <h2>{title || 'Settings'} {state}</h2>
 }
 
 let changeClickState;
@@ -58,6 +68,9 @@ function App() {
           </Route>
           <Route path="/settings">
             <Settings></Settings>
+          </Route>
+          <Route path="/side-by-side">
+            <Settings title={'side-by-side'}></Settings>
           </Route>
           </Switch>
       </header>

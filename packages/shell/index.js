@@ -15,19 +15,19 @@ appContext.provide('random.service', () => {
 router.markDOM();
 router.watchRoot();
 
-/** @type import('microfronts/dist').AppDescriptor */
+const configMode = __NODE_ENV__;
+
 const REACT = {
     appId: 'react',
-    baseUrl: 'http://localhost:3000',
+    baseUrl: (configMode === 'DEVELOPMENT' ? 'http://localhost:3000' : '/apps/react/'),
     staticData: {
         static: 'data'
     }
 }
 
-/** @type import('microfronts/dist').AppDescriptor */
 const ANGULAR = {
     appId: 'angular',
-    baseUrl: 'http://localhost:4200',
+    baseUrl: (configMode === 'DEVELOPMENT' ? 'http://localhost:4200' : '/apps/angular/'),
     staticData: {
         static: 'data'
     }
