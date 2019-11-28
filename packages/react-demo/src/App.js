@@ -30,11 +30,26 @@ function Settings() {
 }
 
 function App() {
+  const [ userClick, setClick ] = useState();
+  let subscription;
+  useEffect(() => () => {
+    if (subscription) {
+      subscription.unsubscribe();
+    }
+  });
+  AppContext.require('click.service').then(emitter => {
+    subscription = emitter.subscribe((value) => {
+      setClick(value);
+      console.log(value);
+    });
+  });
   return (
     <Router>
     <div className="App">
       <header className="App-header">
         Microfronts Demo: React module
+        <p>The data for user clicks is retreived from angular application via the Application Context</p>
+        <p>User clicked: {userClick}</p>
         <Link to="/home">GO HOME</Link>
         <Link to="/settings">GO TO SETTINGS</Link>
         <Switch>

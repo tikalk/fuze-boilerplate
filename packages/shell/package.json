@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "microfronts": "^1.0.1"
+    "microfronts": "^1.0.2"
   },
   "devDependencies": {
     "http-server": "^0.12.0"
