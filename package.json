@@ -6,7 +6,8 @@
   "scripts": {
     "start": "lerna run start --parallel --stream",
     "build": "lerna run build --stream",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "lerna bootstrap"
   },
   "repository": {
     "type": "git",
